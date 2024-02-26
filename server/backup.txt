@@ -1,0 +1,296 @@
+{
+  "4:00 PM": [
+    {
+      "Alison Wong": "Sensei Michael"
+    },
+    {
+      "Campbell Sit": "Sensei Elsa"
+    },
+    {
+      "Carsten Li": "Sensei Michael"
+    },
+    {
+      "Connor Tsang": "Sensei Michael"
+    },
+    {
+      "Connor Wu": "Sensei Tyson"
+    },
+    {
+      "Dexter Han": "Sensei Benny"
+    },
+    {
+      "Emma Han": "Sensei Tyson"
+    },
+    {
+      "Ethan Chan": "Sensei Joshua"
+    },
+    {
+      "Hayden Ngo": "Sensei Michael"
+    },
+    {
+      "Isaac Lee": "Sensei Elsa"
+    },
+    {
+      "Israel Semple": "Sensei Tyson"
+    },
+    {
+      "James Lin": "Sensei Michael"
+    },
+    {
+      "Jocelyn So": "Sensei Tyson"
+    },
+    {
+      "Joseph Huang": "Sensei Elsa"
+    },
+    {
+      "Julian Kwok": "Sensei Joshua"
+    },
+    {
+      "Marco Yan": "Sensei Kevin"
+    },
+    {
+      "Sajay Sabeskumar": "Sensei Benny"
+    },
+    {
+      "Shawn Gong": "Sensei Kevin"
+    },
+    {
+      "Tyler Tsui": "Sensei Joshua"
+    },
+    {
+      "hannah lin": "Sensei Joshua"
+    },
+    {
+      "wilson Chen": "Sensei Benny"
+    },
+    {
+      "zakaria Syed": "Sensei Kevin"
+    }
+  ],
+  "4:30 PM": [
+    {
+      "Lucas Tang": "INTERMEDIATE"
+    },
+    {
+      "Marcus Tang": "INTERMEDIATE"
+    },
+    {
+      "Terra Wang": "INTERMEDIATE"
+    },
+    {
+      "Walter Wang": "EXPLORE"
+    },
+    {
+      "Wesley Lye": "INTERMEDIATE"
+    },
+    {
+      "Yogan Chu": "INTERMEDIATE"
+    }
+  ],
+  "5:00 PM": [
+    {
+      "Ahana Shivji": "Sensei Tyson"
+    },
+    {
+      "Alison Wong": "Sensei Michael"
+    },
+    {
+      "Amelia Bi": "Sensei George"
+    },
+    {
+      "Anastasia Kostakis": "Sensei Joshua"
+    },
+    {
+      "Clint Tze": "Sensei George"
+    },
+    {
+      "Connor Wu": "Sensei Tyson"
+    },
+    {
+      "Elijah Graham": "Sensei Kevin"
+    },
+    {
+      "Ethan Chan": "Sensei Joshua"
+    },
+    {
+      "Ethan Chu": "Sensei Benny"
+    },
+    {
+      "Gideon Kwok": "Sensei Michael"
+    },
+    {
+      "Isaac Lee": "Sensei Elsa"
+    },
+    {
+      "Israel Semple": "Sensei Tyson"
+    },
+    {
+      "James Lin": "Sensei Michael"
+    },
+    {
+      "Jocelyn So": "Sensei Tyson"
+    },
+    {
+      "Joseph Huang": "Sensei Elsa"
+    },
+    {
+      "Kynton Lam": "Sensei George"
+    },
+    {
+      "Lucas Ferraro": "Sensei Elsa"
+    },
+    {
+      "Marco Yan": "Sensei Kevin"
+    },
+    {
+      "Marcus Chan": "Sensei Joshua"
+    },
+    {
+      "Matias Morales": "Sensei Elsa"
+    },
+    {
+      "Muhammad Ayaan Laher": "Sensei Tyson"
+    },
+    {
+      "Olivia Jung": "Sensei Elsa"
+    },
+    {
+      "Raymond Tan": "Sensei Kevin"
+    },
+    {
+      "Sajay Sabeskumar": "Sensei Benny"
+    },
+    {
+      "Shawn Gong": "Sensei Kevin"
+    },
+    {
+      "Silas Kwok": "Sensei Michael"
+    },
+    {
+      "Skylar Lo": "Sensei Michael"
+    },
+    {
+      "Tyler Tsui": "Sensei Joshua"
+    },
+    {
+      "ethan sheungyeung": "Sensei Joshua"
+    },
+    {
+      "wilson Chen": "Sensei Benny"
+    }
+  ],
+  "5:30 PM": [
+    {
+      "Aiden Wan": "INTERMEDIATE"
+    },
+    {
+      "Jasper Bi": "INTERMEDIATE"
+    },
+    {
+      "Xander Phillips": "INTERMEDIATE"
+    }
+  ],
+  "6:00 PM": [
+    {
+      "Aarav Malhotra": "Sensei Kevin"
+    },
+    {
+      "Ahana Shivji": "Sensei Tyson"
+    },
+    {
+      "Amelia Bi": "Sensei George"
+    },
+    {
+      "Anastasia Kostakis": "Sensei Joshua"
+    },
+    {
+      "Ansh Nair": "Sensei Kevin"
+    },
+    {
+      "Ari Sachdev": "Sensei Benny"
+    },
+    {
+      "Aroosh Ahmed": "Sensei Michael"
+    },
+    {
+      "Braeden Patel": "Sensei Elsa"
+    },
+    {
+      "Clint Tze": "Sensei George"
+    },
+    {
+      "Cody Chau": "Sensei Michael"
+    },
+    {
+      "ELLA Ng": "Sensei Joshua"
+    },
+    {
+      "Edison Cao": "Sensei Elsa"
+    },
+    {
+      "Ethan Chu": "Sensei Benny"
+    },
+    {
+      "Ethan Wang": "Sensei Kevin"
+    },
+    {
+      "Felix Tan": "Sensei Joshua"
+    },
+    {
+      "Jayden Wong": "Sensei Joshua"
+    },
+    {
+      "Keaton Yue": "Sensei Benny"
+    },
+    {
+      "Lucas Ferraro": "Sensei Elsa"
+    },
+    {
+      "Matias Morales": "Sensei Elsa"
+    },
+    {
+      "Mithunan Murugathas": "Sensei George"
+    },
+    {
+      "Nathan Dai": "Sensei Elsa"
+    },
+    {
+      "Nathan Wong": "Sensei Joshua"
+    },
+    {
+      "Roosham Tiku": "Sensei Michael"
+    },
+    {
+      "Skylar Lo": "Sensei Michael"
+    },
+    {
+      "Vithunan Murugathas": "Sensei Kevin"
+    }
+  ],
+  "7:00 PM": [
+    {
+      "Ansh Nair": "Sensei Kevin"
+    },
+    {
+      "Ari Sachdev": "Sensei Benny"
+    },
+    {
+      "ELLA Ng": "Sensei Joshua"
+    },
+    {
+      "Ethan Wang": "Sensei Kevin"
+    },
+    {
+      "Jayden Wong": "Sensei Joshua"
+    },
+    {
+      "Keaton Yue": "Sensei Benny"
+    },
+    {
+      "Nathan Wong": "Sensei Joshua"
+    },
+    {
+      "Tytus Brayden Leung": "Sensei George"
+    }
+  ]
+}

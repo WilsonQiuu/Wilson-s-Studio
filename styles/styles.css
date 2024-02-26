@@ -1,0 +1,314 @@
+body {
+    font-size: 18px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2em;
+
+
+}
+
+body.dark-mode #searchInput {
+    background-color: #444;
+    border: 1px solid #666;
+    color: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    /* Light gray background */
+    color: #333;
+    /* Text color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+.header {
+    background-color: #2ecc71;
+    /* Green header background */
+    color: #fff;
+    /* White text color */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Spacing between elements */
+    overflow: hidden;
+    /* Hide overflow text */
+}
+
+button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 110px;
+    /* Set width */
+    height: 40px;
+    /* Set height */
+}
+
+/* Adjust hover styles for buttons */
+button:hover {
+    background-color: #fff;
+    color: #2ecc71;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    overflow: hidden;
+    /* Hide overflow text */
+    text-overflow: ellipsis;
+    /* Display ellipsis (...) for overflow */
+    flex: 1;
+    /* Allow the h1 to take available space */
+    text-align: center;
+    /* Center the text */
+}
+
+
+/* Time slots */
+#timeList li,
+#studentList li,
+#senseiName {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #fff;
+    /* White background for items */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 1.2em;
+}
+
+#timeList li:hover,
+#studentList li:hover,
+#senseiName:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Sensei display */
+#sensei {
+    text-align: center;
+}
+
+#senseiName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2ecc71;
+    /* Green for Sensei name */
+}
+
+/* Decorative elements */
+hr {
+    border: none;
+    border-top: 2px solid #2ecc71;
+    /* Green line */
+    margin: 20px auto;
+    max-width: 50%;
+}
+
+/* Hide and show elements */
+#students,
+#sensei {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    /* Remove default bullets */
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h2 {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2ecc71;
+    /* Green for Sensei name */
+}
+
+.dark-mode {
+    /* Update colors and styles for dark mode */
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .header {
+    color: #333;
+}
+
+.dark-mode button,
+.dark-mode #timeList li,
+.dark-mode #studentList li,
+.dark-mode #senseiName {
+    background-color: #1a1a1a;
+    border-color: #fff;
+}
+
+.dark-mode button:hover,
+.dark-mode #timeList li:hover,
+.dark-mode #studentList li:hover,
+.dark-mode #senseiName:hover {
+    background-color: #fff;
+    color: #1a1a1a;
+}
+
+/* Hide and show elements */
+#students,
+#sensei {
+    display: none;
+}
+
+/* CSS Styles for Sensei Stats */
+#senseiStats {
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+#senseiStats p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#senseiStats ul {
+    list-style: none;
+    padding: 0;
+}
+
+#senseiStats li {
+    margin-bottom: 8px;
+}
+
+.stars {
+    color: #FFD700;
+}
+
+.stars span::before {
+    content: '★';
+}
+
+.empty-stars span::before {
+    content: '☆';
+    color: #ccc;
+}
+
+#senseiName {
+    width: 80%;
+}
+
+.sensei-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for sensei profile image */
+.sensei-profile {
+    margin-right: 20px;
+}
+
+#senseiProfilePic {
+    width: 300px;
+    height: 300px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#description {
+    margin-top: 20px;
+    width: 300px;
+}
+
+.sensei-profile {
+    margin-right: 20px;
+}
+
+#senseiProfilePic {
+    width: 200px;
+    height: 200px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style for sensei stats */
+#senseiStats ul {
+    border: 1px solid #ccc;
+    /* Add border */
+    padding: 10px;
+    /* Add padding */
+    max-width: 300px;
+    /* Set maximum width */
+}
+
+#senseiStats ul li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+/* Add style for the description */
+#description {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Sign-in button should pop out more and be opac */
+#Sign-in {
+    background-color: #2ecc71;
+    /* Green header background */
+    color: #fff;
+    /* White text color */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Spacing between elements */
+    overflow: hidden;
+    /* Hide overflow text */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 110px;
+    /* Set width */
+    height: 40px;
+    /* Set height */
+}

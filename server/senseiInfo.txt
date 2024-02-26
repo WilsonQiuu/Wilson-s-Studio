@@ -1,0 +1,162 @@
+{
+  "Sensei Kevin": {
+    "age": "22",
+    "height": "205 cm",
+    "organization": "4",
+    "communication": "4",
+    "problemSolving": "4",
+    "timeManagement": "4",
+    "leadership": "5",
+    "description": "Experienced Sensei and got nice Kicks"
+  },
+  "Sensei George": {
+    "age": "30",
+    "height": "175 cm",
+    "organization": "3",
+    "communication": "4",
+    "problemSolving": "3",
+    "timeManagement": "5",
+    "leadership": "4",
+    "description": "Skilled Sensei with strong communication and time management skills."
+  },
+  "Sensei Philip": {
+    "age": "26",
+    "height": "185 cm",
+    "organization": "5",
+    "communication": "5",
+    "problemSolving": "5",
+    "timeManagement": "4",
+    "leadership": "5",
+    "description": "Highly organized and effective Sensei excelling in communication and leadership."
+  },
+  "Sensei Juan": {
+    "age": "23",
+    "height": "170 cm",
+    "organization": "5",
+    "communication": "5",
+    "problemSolving": "5",
+    "timeManagement": "5",
+    "leadership": "5",
+    "description": "Adaptive and communicative Sensei with strengths in problem-solving."
+  },
+  "Sensei Joshua": {
+    "age": "25",
+    "height": "182 cm",
+    "organization": "4",
+    "communication": "5",
+    "problemSolving": "4",
+    "timeManagement": "4",
+    "leadership": "4",
+    "description": "Versatile and reliable Sensei known for effective communication."
+  },
+  "Sensei Ernest": {
+    "age": "29",
+    "height": "177 cm",
+    "organization": "4",
+    "communication": "4",
+    "problemSolving": "3",
+    "timeManagement": "4",
+    "leadership": "4",
+    "description": "Detail-oriented and experienced Sensei with good leadership qualities."
+  },
+  "Sensei Jacky": {
+    "age": "22",
+    "height": "165 cm",
+    "organization": "3",
+    "communication": "3",
+    "problemSolving": "2",
+    "timeManagement": "3",
+    "leadership": "2",
+    "description": "Up-and-coming Sensei focusing on improving communication skills."
+  },
+  "Sensei Michael": {
+    "age": "24",
+    "height": "175 cm",
+    "organization": "2",
+    "communication": "3",
+    "problemSolving": "3",
+    "timeManagement": "3",
+    "leadership": "3",
+    "description": "Novice Sensei eager to enhance problem-solving abilities."
+  },
+  "Sensei Nathaniel": {
+    "age": "32",
+    "height": "179 cm",
+    "organization": "4",
+    "communication": "5",
+    "problemSolving": "4",
+    "timeManagement": "4",
+    "leadership": "5",
+    "description": "Experienced Sensei with strong communication and leadership skills."
+  },
+  "Sensei Ruchika": {
+    "age": "28",
+    "height": "170 cm",
+    "organization": "5",
+    "communication": "4",
+    "problemSolving": "5",
+    "timeManagement": "4",
+    "leadership": "5",
+    "description": "Highly organized and effective Sensei excelling in problem-solving and leadership."
+  },
+  "Sensei Giordan": {
+    "age": "26",
+    "height": "181 cm",
+    "organization": "4",
+    "communication": "5",
+    "problemSolving": "4",
+    "timeManagement": "5",
+    "leadership": "4",
+    "description": "Versatile and reliable Sensei known for effective communication and time management."
+  },
+  "Sensei James": {
+    "age": "30",
+    "height": "175 cm",
+    "organization": "3",
+    "communication": "4",
+    "problemSolving": "3",
+    "timeManagement": "4",
+    "leadership": "4",
+    "description": "Skilled Sensei with good communication and leadership qualities."
+  },
+  "Sensei Wilson": {
+    "age": "22",
+    "height": "180 cm",
+    "organization": "1",
+    "communication": "0",
+    "problemSolving": "1",
+    "timeManagement": "1",
+    "leadership": "0",
+    "description": "Literally the worst Sensei in the dojo, I hope you don't end up with him"
+  },
+  "Sensei Benny": {
+    "age": "29",
+    "height": "178 cm",
+    "organization": "4",
+    "communication": "3",
+    "problemSolving": "4",
+    "timeManagement": "4",
+    "leadership": "3",
+    "description": "Detail-oriented and experienced Sensei with strengths in organization."
+  },
+  "Sensei Ricky": {
+    "age": "27",
+    "height": "180 cm",
+    "organization": "3",
+    "communication": "4",
+    "problemSolving": "3",
+    "timeManagement": "3",
+    "leadership": "3",
+    "description": "Adaptive and communicative Sensei with good problem-solving skills."
+  },
+  "Sensei Ethan": {
+    "age": "17",
+    "height": "170 cm",
+    "organization": "3",
+    "communication": "4",
+    "problemSolving": "5",
+    "timeManagement": "2",
+    "leadership": "3",
+    "description": "New-ish Blood, Don't challenge him in Chess, he will crush you"
+  }
+}

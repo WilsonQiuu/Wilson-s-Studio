@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+        Start the server with by typing "python -m http.server" in the terminal for the website to work
+        then start the scraper by "cd server" then typing "python main.py" in the terminal for updating the schedule.txt file
+        then start the sign-in.py by typing "python sign-in.py" in the terminal for sign in functionality
+
+        and then open http://localhost:8000/index.html in your browser
+
+
+    -->
+    <meta charset="UTF-8">
+    <title>Wilson's Studio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <button onclick="goBack()">Back</button>
+        <h1>Wilson's Studio</h1>
+        <button onclick="toggleDarkMode()">Dark Mode</button>
+    </div>
+    <input type="text" id="searchInput" oninput="searchStudents()" placeholder="Search for a student...">
+
+    <div id="times">
+        <h2>Available Times:</h2>
+        <ul id="timeList">
+        </ul>
+    </div>
+
+    <div id="students" style="display: none;">
+        <h2>Students:</h2>
+
+        <ul id="studentList">
+        </ul>
+    </div>
+
+    <div id="sensei" style="display: none;">
+
+        <div class="wrapper">
+            <div id="senseiName"></div>
+            <div class="sensei-content">
+
+                <div class="sensei-profile">
+                    <img id="senseiProfilePic" src="" alt="Sensei Profile Picture">
+                    <div id="description"></div>
+
+                </div>
+
+                <div>
+                    <div id="currentStudent">
+                        <h2>Current Student: </h2>
+                        <p id="studentName"></p>
+                        <p id="time"></p>
+                        <button id="Sign-in">Sign-in</button>
+
+                    </div>
+                </div>
+                <div id="senseiStats"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        currentSensei = null;
+        currentTime = null;
+        currentStudent = null;
+
+
+        // Check if dark mode is enabled
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            const body = document.body;
+            const isDarkMode = body.classList.contains('dark-mode');
+
+            if (isDarkMode) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', false);
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', true);
+            }
+
+        }
+        function goBack() {
+            if (document.getElementById('sensei').style.display === 'block') {
+                document.getElementById('sensei').style.display = 'none';
+                document.getElementById('students').style.display = 'block';
+                currentStudent = null;
+            }
+            // if we are on the students page, go back to the times page
+            else if (document.getElementById('students').style.display === 'block') {
+                document.getElementById('students').style.display = 'none';
+                document.getElementById('times').style.display = 'block';
+                currentTime = null;
+            }
+
+        }
+
+        let scheduledTimes = {};
+
+        // Function to populate the times
+        function populateTimes() {
+            const timeList = document.getElementById('timeList');
+            Object.keys(scheduledTimes).forEach(time => {
+                const listItem = document.createElement('li');
+                listItem.textContent = time;
+                listItem.addEventListener('click', () => showStudents(time));
+                timeList.appendChild(listItem);
+            });
+
+        }
+
+        function showStudents(time) {
+
+            const studentList = document.getElementById('studentList');
+            studentList.innerHTML = ''; // Clear previous student list
+
+            const studentsForTime = scheduledTimes[time];
+
+            // Sort students by their first names
+            studentsForTime.sort((a, b) => {
+                const nameA = Object.keys(a)[0].split(' ')[0].toLowerCase(); // Get first name of student A
+                const nameB = Object.keys(b)[0].split(' ')[0].toLowerCase(); // Get first name of student B
+                return nameA.localeCompare(nameB);
+            });
+
+            studentsForTime.forEach(student => {
+                const studentName = Object.keys(student)[0];
+                const listItem = document.createElement('li');
+                listItem.textContent = studentName;
+                listItem.addEventListener('click', () => { showSensei(studentName); currentTime = time; currentStudent = studentName; });
+                studentList.appendChild(listItem);
+            });
+
+            // Hide times and show students
+            document.getElementById('times').style.display = 'none';
+            document.getElementById('students').style.display = 'block';
+        }
+
+        function showSensei(studentName) {
+            currentStudent = studentName;
+            const senseiName = getSenseiForStudent(studentName);
+            const senseiInfoUrl = 'server/senseiInfo.txt?v=' + Date.now();
+            const senseiImageFolder = 'senseiImages/';
+            const defaultImage = 'blank.png';
+
+            fetch(senseiInfoUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(senseiInfoData => {
+                    const senseiDetails = senseiInfoData[senseiName];
+                    const senseiImageSrc = `${senseiImageFolder}${encodeURIComponent(senseiName)}.png`; // Path to the Sensei's image
+
+                    fetch(senseiImageSrc)
+                        .then(imageResponse => {
+                            if (imageResponse.status === 200) {
+                                document.getElementById('senseiProfilePic').src = senseiImageSrc;
+                            } else {
+                                // Image not found, use default image
+                                document.getElementById('senseiProfilePic').src = `${senseiImageFolder}${defaultImage}`;
+                            }
+                        })
+                        .catch(() => {
+                            // Image fetch failed, use default image
+                            document.getElementById('senseiProfilePic').src = `${senseiImageFolder}${defaultImage}`;
+                        });
+
+                    const senseiNameElement = document.getElementById('senseiName');
+                    senseiNameElement.textContent = senseiName;
+
+                    const senseiStatsElement = document.getElementById('senseiStats');
+
+                    if (senseiDetails) {
+                        senseiStatsElement.innerHTML = `
+                    <p>Sensei Stats:</p>
+                    <ul>
+                        <li>Age: ${senseiDetails.age}</li>
+                        <li>Height: ${senseiDetails.height}</li>
+                        <li>Organization: <span class="stars">${generateStars(senseiDetails.organization)}</span></li>
+                        <li>Communication: <span class="stars">${generateStars(senseiDetails.communication)}</span></li>
+                        <li>Problem Solving: <span class="stars">${generateStars(senseiDetails.problemSolving)}</span></li>
+                        <li>Time Management: <span class="stars">${generateStars(senseiDetails.timeManagement)}</span></li>
+                        <li>Leadership: <span class="stars">${generateStars(senseiDetails.leadership)}</span></li>
+                    </ul>
+                `;
+                        document.getElementById('studentName').innerHTML = currentStudent;
+                        document.getElementById('time').innerHTML = currentTime;
+                        document.getElementById('description').innerHTML = senseiDetails.description;
+
+
+                    } else {
+                        senseiStatsElement.innerHTML = ''; // Clear sensei stats if they don't exist
+                        document.getElementById('description').innerHTML = "";
+
+                    }
+
+                    const signInButton = document.getElementById('Sign-in');
+                    const newSignInButton = signInButton.cloneNode(true);
+                    signInButton.parentNode.replaceChild(newSignInButton, signInButton);
+
+                    // Add a listener to the new button
+                    newSignInButton.addEventListener('click', () => {
+                        sendApiRequest(currentStudent, currentTime, senseiName);
+                    });
+
+                    document.getElementById('students').style.display = 'none';
+                    document.getElementById('times').style.display = 'none';
+                    document.getElementById('sensei').style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching Sensei info:', error);
+                });
+        }
+
+
+
+
+
+        // Function to generate stars based on a given value
+        function generateStars(value) {
+            const intValue = parseInt(value);
+            const maxStars = 5;
+            const fullStars = '★'.repeat(intValue);
+            const emptyStars = '☆'.repeat(maxStars - intValue);
+            return `${fullStars}${emptyStars}`;
+        }
+
+        // Function to get the Sensei responsible for a student
+        function getSenseiForStudent(studentName) {
+            let sensei = 'Sensei not found';
+            Object.values(scheduledTimes).forEach(students => {
+                students.forEach(student => {
+                    if (Object.keys(student)[0] === studentName) {
+                        sensei = student[studentName];
+                    }
+                });
+            });
+            return sensei;
+        }
+
+
+
+
+        function updateList() {
+            fetch('server/schedule.txt?v=' + Date.now()) // to make sure its the updated version
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    scheduledTimes = JSON.parse(data);
+
+                    populateTimes();
+                })
+                .catch(error => {
+                    console.error('There was a problem fetching the schedule:', error);
+                });
+        }
+
+        function searchStudents() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            const studentList = document.getElementById('studentList');
+
+            studentList.innerHTML = '';
+
+            Object.entries(scheduledTimes).forEach(([time, students]) => {
+                students.forEach(student => {
+                    const studentName = Object.keys(student)[0];
+                    const sensei = student[Object.keys(student)[0]];
+
+                    if (studentName.toLowerCase().includes(searchValue)) {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${studentName} (${sensei}) at ${time}`;
+
+                        listItem.addEventListener('click', () => { showSensei(studentName); currentTime = time; currentStudent = studentName; });
+                        studentList.appendChild(listItem);
+
+                    }
+                });
+            });
+            document.getElementById('students').style.display = 'block';
+            document.getElementById('times').style.display = 'none';
+        }
+
+        function sendApiRequest(name, time, sensei) {
+            const apiUrl = 'http://localhost:5000/greet';
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: name,
+                    time: time,
+                    sensei: sensei,
+                }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.result); // Log the response from the server
+                })
+                .catch(error => {
+                    console.error('Error sending API request:', error);
+                });
+        }
+
+        populateTimes();
+        updateList();
+    </script>
+</body>
+
+</html>
